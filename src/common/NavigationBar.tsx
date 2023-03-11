@@ -1,6 +1,6 @@
 import React from "react";
 
-export const NavigationBar: React.FC = () => {
+const NavigationBar: React.FC = () => {
     return (
         <div>
 
@@ -8,3 +8,4 @@ export const NavigationBar: React.FC = () => {
     )
 }
 
+export default NavigationBar;

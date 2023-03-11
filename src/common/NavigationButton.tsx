@@ -1,6 +1,9 @@
 import React from "react";
+import styled from "styled-components";
 
-export const NavigationSwitch: React.FC  = () => {
+
+
+const NavigationSwitch: React.FC  = () => {
     return (
         <div>
 
@@ -8,3 +11,4 @@ export const NavigationSwitch: React.FC  = () => {
     )
 }
 
+export default NavigationSwitch;
