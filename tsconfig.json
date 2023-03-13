@@ -1,10 +1,17 @@
 {
   "compilerOptions": {
+    "types": [
+      "jest",
+      "node"
+    ],
     "target": "es5",
     "lib": [
       "dom",
       "dom.iterable",
       "esnext"
+    ],
+    "typeRoots": [
+      "./types"
     ],
     "allowJs": true,
     "skipLibCheck": true,
@@ -18,15 +25,15 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "noEmit": true,
-    "jsx": "react-jsx"
+    "jsx": "preserve"
   },
   "include": [
     "src",
-      "react-app-env.d.ts",
-      "**/*.ts",
-      "**/*.tsx",
-      "styles",
-      "pages",
-      "public"
+    "react-app-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    "styles",
+    "pages",
+    "public"
   ]
 }
