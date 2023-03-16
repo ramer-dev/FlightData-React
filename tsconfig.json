@@ -1,17 +1,15 @@
 {
   "compilerOptions": {
     "types": [
+      "node",
       "jest",
-      "node"
+      "@testing-library/jest-dom"
     ],
     "target": "es5",
     "lib": [
       "dom",
       "dom.iterable",
       "esnext"
-    ],
-    "typeRoots": [
-      "./types"
     ],
     "allowJs": true,
     "skipLibCheck": true,
@@ -35,5 +33,5 @@
     "styles",
     "pages",
     "public"
-  ]
+, "types"  ]
 }

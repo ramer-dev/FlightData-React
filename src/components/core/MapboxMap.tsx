@@ -2,6 +2,7 @@ import React, { useRef, useState, useEffect } from 'react';
 // @ts-ignore eslint-disable-next-line import/no-webpack-loader-syntax  // 공식 문서에 이렇게 하라고 나와있다... 이왜진...?
 import mapboxgl, {Marker} from '!mapbox-gl';
 import styled from 'styled-components';
+import { mapConfig } from '../../config/mapConfigData';
 
 
 export const MapContainer = styled.div`
@@ -28,8 +29,13 @@ interface MapboxMapProps {
   onMapRemoved?(): void;
 }
 
-const MapboxMap: React.FC = ({ initialOptions = {}, onMapLoaded, onMapRemoved }: MapboxMapProps) => {
-  console.log("Layer/{z}/{x}/{y}.png")
+const initialMapOptions : MapboxMapProps = {
+  initialOptions:{
+
+  }
+};
+
+const MapboxMap: React.FC = ({ initialOptions = initialMapOptions, onMapLoaded, onMapRemoved }: MapboxMapProps) => {
   const [map, setMap] = useState<mapboxgl.Map>();
 
   const mapNode = useRef(null);
@@ -41,10 +47,10 @@ const MapboxMap: React.FC = ({ initialOptions = {}, onMapLoaded, onMapRemoved }:
     const node = mapNode.current;
 
     if (node === null) return;
-
     const mapboxMap = new mapboxgl.Map({
       container: node,
-      accessToken: process.env.REACT_APP_MAPBOX_TOKEN,
+      accessToken: mapConfig.accessToken,
+      // accessToken : "pk.eyJ1IjoiZ21sNDA5NiIsImEiOiJja2psYmUyMTMwZ25uMnRuc3oyaHd5eW04In0.IYCm4wr_hHfB2w6KImnvBg",
       style: "mapbox://styles/mapbox/streets-v12",
       // style:MapStyle,
       center: [lng, lat],

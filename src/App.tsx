@@ -1,16 +1,15 @@
-import React from 'react';
-import './App.css';
-import MapboxMap from './components/core/MapboxMap';
+import React from "react";
+import "./App.css";
+import {hot} from 'react-hot-loader'
+import MapboxMap from "./components/core/MapboxMap";
 
-function App() {
+const App = () => {
   return (
     <div className="App">
-      <header className="App-header">
-        
-      </header>
+      <header className="App-header" />
       <MapboxMap/>
     </div>
   );
-}
+};
 
-export default App;
+export default hot(module)(App);
